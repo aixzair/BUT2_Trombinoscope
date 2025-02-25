@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database Name="bddpersonnels" EntityNamespace="BddpersonnelContext" ContextNamespace="BddpersonnelContext" Class="BddpersonnelDataContext" xmlns:ed="http://devart.com/schemas/EntityDeveloper/1.0" ed:Guid="96bacd24-2ef2-464d-a4a5-240389535a5a" Provider="Devart.Data.MySql.Linq.Provider.MySqlDataProvider, Devart.Data.MySql.Linq" Extended="true" xmlns="http://schemas.devart.com/linqconnect/mapping">
+  <Connection Mode="ConnectionString" ConnectionString="User Id=GestionnaireBDD;Password=Password1234@but;Host=localhost;Database=bddpersonnels;Persist Security Info=True" Provider="Devart.Data.MySql" />
+  <Table Name="bddpersonnels.fonctions" Member="Fonctions">
+    <Type Name="Fonction" ed:Guid="4317d21f-b8f0-4c35-a20b-3d9df1b54d7f">
+      <Column Name="id" Member="Id" Type="System.Int32" AutoSync="OnInsert" DbType="INT(11) NOT NULL AUTO_INCREMENT" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="true" ed:Guid="b29e3a1b-d3ee-45d6-a01e-9877b99be82e" />
+      <Column Name="intitule" Member="Intitule" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="e74ae8c6-b8ff-4cca-9459-77197953e0ea" />
+      <Association Name="Fonction_Personnel" ed:AssociationGuid="e9417aca-68bd-44ec-9a7e-4447e13869f0" Member="Personnels" ed:Guid="d83c2e8e-89f0-4b1f-be21-90b1b206c8e4" ThisKey="Id" OtherKey="IdFonction" Type="Personnel" />
+    </Type>
+  </Table>
+  <Table Name="bddpersonnels.personnels" Member="Personnels">
+    <Type Name="Personnel" ed:Guid="c413e811-bf6d-4dbf-9350-a847e0c0fb08">
+      <Column Name="id" Member="Id" Type="System.Int32" AutoSync="OnInsert" DbType="INT(11) NOT NULL AUTO_INCREMENT" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="true" ed:Guid="61b11466-d835-4726-b89c-5b2c960f8d5c" />
+      <Column Name="prenom" Member="Prenom" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="a0c4e3ce-5c85-4740-85be-78ba3f3a5abf" />
+      <Column Name="nom" Member="Nom" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="72beb341-4e12-4343-b460-afe917712549" />
+      <Column Name="idService" Member="IdService" Type="System.Int32" DbType="INT(11) NOT NULL" CanBeNull="false" UpdateCheck="Never" Precision="11" ed:ValidateRequired="true" ed:Guid="32208e60-3c83-4f04-a440-c45bb2a6aebb" />
+      <Column Name="idFonction" Member="IdFonction" Type="System.Int32" DbType="INT(11) NOT NULL" CanBeNull="false" UpdateCheck="Never" Precision="11" ed:ValidateRequired="true" ed:Guid="612895a7-d670-4682-851e-3342288c460c" />
+      <Column Name="telephone" Member="Telephone" Type="System.String" DbType="TEXT NULL" CanBeNull="true" UpdateCheck="Never" DefaultValue="&quot;NULL&quot;" ed:ValidateRequired="false" ed:Guid="8e0d1f1a-6982-464a-8411-915cadcb200b" />
+      <Column Name="photo" Member="Photo" Type="System.Byte[]" DbType="BLOB NULL" CanBeNull="true" UpdateCheck="Never" DefaultValue="NULL" ed:ValidateRequired="false" ed:Guid="3ff80dd4-e222-441f-bc69-d4bb045086ff" />
+      <Association Name="Service_Personnel" ed:AssociationGuid="c6281897-753f-43a2-acda-1ff1c744369d" Member="Service" ed:Guid="8b0d3ad7-0089-4475-b46b-e418ee5e99bc" ThisKey="IdService" OtherKey="Id" Type="Service" DeleteRule="RESTRICT" IsForeignKey="true" />
+      <Association Name="Fonction_Personnel" ed:AssociationGuid="e9417aca-68bd-44ec-9a7e-4447e13869f0" Member="Fonction" ed:Guid="e0f81989-27b9-4491-873d-dd1870672f33" ThisKey="IdFonction" OtherKey="Id" Type="Fonction" DeleteRule="RESTRICT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="bddpersonnels.services" Member="Services">
+    <Type Name="Service" ed:Guid="a7aab087-3da4-48aa-8c0c-0e3262df8b32">
+      <Column Name="id" Member="Id" Type="System.Int32" AutoSync="OnInsert" DbType="INT(11) NOT NULL AUTO_INCREMENT" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Always" Precision="11" ed:ValidateRequired="true" ed:Guid="95bd8d6a-9ac8-491e-b730-5b19fabf2071" />
+      <Column Name="intitule" Member="Intitule" Type="System.String" DbType="TEXT NOT NULL" CanBeNull="false" UpdateCheck="Never" ed:ValidateRequired="true" ed:Guid="64c013c2-09a6-4bac-bdfa-ec6349fac69f" />
+      <Association Name="Service_Personnel" ed:AssociationGuid="c6281897-753f-43a2-acda-1ff1c744369d" Member="Personnels" ed:Guid="9ccebff6-64ba-4ce4-a676-5f24bfbbf6f8" ThisKey="Id" OtherKey="IdService" Type="Personnel" />
+    </Type>
+  </Table>
+</Database>

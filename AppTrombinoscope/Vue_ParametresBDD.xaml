@@ -1,0 +1,33 @@
+﻿<Window x:Class="AppTrombinoscope.Vue_ParametresBDD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppTrombinoscope"
+        mc:Ignorable="d"
+        Title="Vue_ParametresBDD" Height="450" Width="800">
+    <Grid Background="#FF4A8D72">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="49*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="128*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="76*"/>
+            <RowDefinition Height="83*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Enregistrer" Margin="0,0,52,26" Grid.Row="4" VerticalAlignment="Bottom" Click="onEnregistrer" Height="20" HorizontalAlignment="Right" Width="94"/>
+        <Button Content="Annuler" Margin="45,0,0,26" Grid.Row="4" VerticalAlignment="Bottom" Grid.Column="1" Height="20" Click="onAnnuler" HorizontalAlignment="Left" Width="94"/>
+        <Label Content="Adresse IP BDD" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White" Margin="0,0,56,10" Height="26" HorizontalAlignment="Right" Width="97"/>
+        <Label Content="Port d'écoute BDD" Margin="0,0,38,14" VerticalAlignment="Bottom" FontWeight="Bold" Grid.IsSharedSizeScope="True" Foreground="White" RenderTransformOrigin="1.114,1.103" Grid.Row="1" Height="26" HorizontalAlignment="Right" Width="115"/>
+        <TextBox x:Name="tb_ip" Margin="34,0,0,10" TextWrapping="Wrap" Grid.Column="1" Height="23" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="120"/>
+        <TextBox x:Name="tb_port" Height="23" Margin="34,0,0,14" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Width="120"/>
+        <TextBox x:Name="tb_utilisateur" Height="23" Margin="34,0,0,11" TextWrapping="Wrap" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Width="120"/>
+        <Label Content="Mot de passe" FontWeight="Bold" Foreground="White" Margin="0,0,68,8" Grid.Row="3" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="85"/>
+        <Label Content="Nom d'utilisateur" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White" Margin="0,0,44,3" Grid.Row="2" Height="26" HorizontalAlignment="Right" Width="109"/>
+        <PasswordBox x:Name="tb_mdp" Grid.Column="1" HorizontalAlignment="Left" Margin="38,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="116" Height="23"/>
+    </Grid>
+</Window>
